@@ -26,17 +26,21 @@ const StyledPane = styled.div`
   &:nth-of-type(3) {
     width: 100%;
     display: flex;
-    @media ${({ theme }) => theme.device.tabletOnly} {
-      justify-content: center;
+    justify-content: center;
+    @media ${({ theme }) => theme.device.tablet} {
+      justify-content: flex-start;
     }
   }
 
   h2 {
     ${({ theme }) => theme.type.largeHeader};
+    text-align: left;
     @media ${({ theme }) => theme.device.tabletOnly} {
-      max-width: 820px;
-      margin: 0 auto;
       text-align: center;
+      margin: 0 auto;
+      max-width: 820px;
+    }
+    @media ${({ theme }) => theme.device.tablet} {
     }
   }
 `;
@@ -57,16 +61,39 @@ const TelephoneNumber = styled.a`
   ${({ theme }) => theme.type.body};
 `;
 
-const Address = styled.address`
+const Address = styled.a`
   ${({ theme }) => theme.type.body};
 `;
 
-const StyledContactItem = styled.div`
+const StyledContactItem = styled.a`
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
   width: 230px;
   padding-bottom: 1rem;
+
+  span {
+    ${({ theme }) => theme.type.body};
+    padding-left: 0.5rem;
+  }
+
+  svg path {
+    fill: ${({ theme }) => theme.colors.active};
+  }
+  &:hover svg path {
+    fill: ${({ theme }) => theme.colors.activeHover};
+  }
+
+  &::nth-of-type(1) {
+    @media ${({ theme }) => theme.mobileOnly} {
+      order: 2;
+    }
+  }
+  &::nth-of-type(2) {
+    @media ${({ theme }) => theme.mobileOnly} {
+      order: 1;
+    }
+  }
 
   > div:first-child {
     flex: 0 0 auto;
@@ -84,16 +111,17 @@ const ContactItems = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
   @media ${({ theme }) => theme.device.tabletOnly} {
     justify-content: space-around;
   }
 `;
 
-const ContactItem = ({ icon, children }) => {
+const ContactItem = ({ href, icon, children }) => {
   return (
-    <StyledContactItem>
+    <StyledContactItem href={href} target={"_blank"} rel={"noreferrer noopenner"}>
       <Icon>{icon}</Icon>
-      <div>{children}</div>
+      <span>{children}</span>
     </StyledContactItem>
   );
 };
@@ -103,16 +131,16 @@ export const Footer = ({ children }) => {
     <StyledFooter>
       <div>
         <StyledPane>
-          <h2>Covered boat and RV storage in central Texas</h2>
+          <h2>Covered boat and RV storage in Central&nbsp;Texas</h2>
         </StyledPane>
         <StyledPane>
           <ContactItems>
-            <ContactItem icon={<PhoneSVG />}>
-              <TelephoneNumber href={`tel:254-760-2565`}>(254) 760-2565</TelephoneNumber>
+            <ContactItem href={`tel:254-760-2565`} icon={<PhoneSVG />}>
+              (254) 760-2565
             </ContactItem>
 
-            <ContactItem icon={<LocationSVG />}>
-              <Address href={`tel:254-760-2565`}>13417 Shaw Road, Rogers, TX 76569</Address>
+            <ContactItem href={`https://g.page/Honey-Bee-Storage?share`} icon={<LocationSVG />}>
+              13417 Shaw Road, Rogers, TX 76569
             </ContactItem>
           </ContactItems>
         </StyledPane>

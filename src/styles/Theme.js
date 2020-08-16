@@ -1,5 +1,6 @@
 import React from "react";
 import { ThemeProvider, css } from "styled-components";
+import { darken, lighten } from "polished";
 
 const COLORS = {
   yellow: "#FAB516",
@@ -9,6 +10,8 @@ const COLORS = {
 const SEMANTIC_COLORS = {
   background: COLORS.blue,
   bodyType: "white",
+  active: COLORS.yellow,
+  activeHover: lighten(0.2, COLORS.yellow),
   headerType: "#fff",
   interactive: COLORS.yellow,
 };

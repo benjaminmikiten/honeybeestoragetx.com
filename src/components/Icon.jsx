@@ -16,7 +16,7 @@ const StyledIcon = styled.div`
     }
 
     path {
-      fill: white;
+      fill: ${({ theme }) => theme.colors.active};
     }
   }
 `;
