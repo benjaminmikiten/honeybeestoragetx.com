@@ -145,7 +145,7 @@ export const Footer = ({ children }) => {
           </ContactItems>
         </StyledPane>
         <StyledPane>
-          <LinkButton>See available units</LinkButton>
+          <LinkButton href={"https://www.uhaul.com/Locations/Self-Storage-near-Rogers-TX-76569/1035094/"}>See available units</LinkButton>
         </StyledPane>
       </div>
     </StyledFooter>
