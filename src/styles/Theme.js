@@ -1,6 +1,6 @@
 import React from "react";
 import { ThemeProvider, css } from "styled-components";
-import { darken, lighten } from "polished";
+import { lighten } from "polished";
 
 const COLORS = {
   yellow: "#FAB516",

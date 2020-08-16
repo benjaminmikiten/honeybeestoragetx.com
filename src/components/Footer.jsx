@@ -56,15 +56,6 @@ const StyledFooter = styled.div`
   }
 `;
 
-const TelephoneNumber = styled.a`
-  text-decoration: none;
-  ${({ theme }) => theme.type.body};
-`;
-
-const Address = styled.a`
-  ${({ theme }) => theme.type.body};
-`;
-
 const StyledContactItem = styled.a`
   display: flex;
   flex-wrap: nowrap;
