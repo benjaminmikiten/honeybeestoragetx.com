@@ -27,7 +27,7 @@ const StyledLinkButton = styled.a`
 
   height: ${SETTINGS.small.height}px;
   line-height: ${SETTINGS.small.height}px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   @media ${({ theme }) => theme.device.tablet} {
     font-size: 1.2rem;
     height: ${SETTINGS.large.height}px;

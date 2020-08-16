@@ -19,7 +19,7 @@ const StyledHero = styled.div`
 `;
 
 const Logo = styled.div`
-  width: 158px;
+  width: 140px;
   @media ${({ theme }) => theme.device.tablet} {
     width: 260px;
     margin-bottom: 20px;
