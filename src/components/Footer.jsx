@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import { LinkButton } from "../components/LinkButton";
-
+import { motion } from "framer-motion";
 import { Icon } from "../components/Icon";
 import { ReactComponent as PhoneSVG } from "./icon-phone.svg";
 import { ReactComponent as LocationSVG } from "./icon-location.svg";
 
-const StyledPane = styled.div`
+const StyledPane = styled(motion.div)`
   ${({ theme }) => theme.grid.GridChild};
   flex: 0 0 auto;
   padding-bottom: 2rem;
@@ -118,13 +118,28 @@ const ContactItem = ({ href, icon, children }) => {
 };
 
 export const Footer = ({ children }) => {
+  const initialAnimation = {
+    opacity: 0,
+    transform: `translateY(20px)`,
+  };
+  const transition = {
+    type: "spring",
+    mass: 2,
+    damping: 15,
+    stiffness: 100,
+  };
+  const paneAnimation = {
+    opacity: 1,
+    transform: `translateY(0px)`,
+  };
+
   return (
     <StyledFooter>
       <div>
-        <StyledPane>
+        <StyledPane animate={paneAnimation} initial={initialAnimation} transition={{ ...transition, delay: 0 }}>
           <h2>Covered boat and RV storage in Central&nbsp;Texas</h2>
         </StyledPane>
-        <StyledPane>
+        <StyledPane animate={paneAnimation} initial={initialAnimation} transition={{ ...transition, delay: 0.3 }}>
           <ContactItems>
             <ContactItem href={`tel:254-760-2565`} icon={<PhoneSVG />}>
               (254) 760-2565
@@ -135,7 +150,7 @@ export const Footer = ({ children }) => {
             </ContactItem>
           </ContactItems>
         </StyledPane>
-        <StyledPane>
+        <StyledPane animate={paneAnimation} initial={initialAnimation} transition={{ ...transition, delay: 0.6 }}>
           <LinkButton href={"https://www.uhaul.com/Locations/Self-Storage-near-Rogers-TX-76569/1035094/"}>See available units</LinkButton>
         </StyledPane>
       </div>
