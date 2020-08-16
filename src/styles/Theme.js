@@ -1,73 +1,75 @@
 import React from "react";
 import { ThemeProvider, css } from "styled-components";
 
-const MATERIAL_OCEAN_COLORS = {
-  primary: "#0f111a",
-  secondary: "#00010a",
-  accent: "#3a575c",
-  darkGrey: "#3b4252",
-  red: "#bf616a",
-  green: "#a3be8c",
-  yellow: "#ebcb8b",
-  mediumBlue: "#81a1c1",
-  purple: "#a48ead",
-  brightBlue: "#88c0d0",
-  lightGrey: "#e5e9f0",
-  mediumGrey: "#4c566a",
+const COLORS = {
+  yellow: "#FAB516",
+  blue: "#074F83",
 };
-const THEME = MATERIAL_OCEAN_COLORS;
 
 const SEMANTIC_COLORS = {
-  background: THEME.primary,
-  bodyType: THEME.lightGrey,
-  headerType: THEME.purple,
-  interactive: THEME.red,
+  background: COLORS.blue,
+  bodyType: "#000",
+  headerType: "#fff",
+  interactive: COLORS.yellow,
 };
 const FONTS = {
-  mono: `'Fira Mono', monospace`,
-  default: `'Fira Mono', monospace`,
+  default: `'Source Sans Pro', sans`,
 };
 const GRID = {
-  pageMargin: 32,
+  mobile: {
+    breakpoint: 375,
+  },
+  tablet: {
+    breakpoint: 768,
+  },
+  desktop: {
+    breakpoint: 1200,
+  },
 };
 const GRID_HELPERS = {
   LayoutContainer: css`
     width: 100%;
-    padding-left: ${GRID.pageMargin}px;
-    padding-right: ${GRID.pageMargin}px;
+    /* padding-left: ${GRID.pageMargin}px; */
+    /* padding-right: ${GRID.pageMargin}px; */
     max-width: 1200px;
   `,
+};
+const DEVICE_WIDTHS = {
+  queries: {
+    mobile: `(min-width: ${GRID.mobile.breakpoint}px)`,
+    mobileOnly: `(max-width: ${GRID.mobile.maxWidth}px)`,
+    tablet: `(min-width: ${GRID.tablet.breakpoint}px)`,
+    tabletOnly: `(min-width: ${GRID.tablet.breakpoint}px) and (max-width: ${GRID.tablet.maxWidth}px)`,
+    desktop: `(min-width: ${GRID.desktop.breakpoint}px)`,
+  },
+  size: {
+    mobile: `${GRID.mobile.breakpoint}px`,
+    tablet: `${GRID.tablet.breakpoint}px`,
+    desktop: `${GRID.desktop.breakpoint}px`,
+  },
 };
 
 const TYPE = {
   body: css`
-    font-family: ${FONTS.mono};
+    font-family: ${FONTS.default};
     color: ${SEMANTIC_COLORS.bodyType};
     font-size: 1rem;
-    font-weight: 400;
+    font-weight: 600;
+    @media ${DEVICE_WIDTHS.queries} {
+      font-size: 1.2rem;
+    }
   `,
   largeHeader: css`
-    font-family: ${FONTS.mono};
+    font-family: ${FONTS.default};
     color: ${SEMANTIC_COLORS.headerType};
     font-size: 1.5rem;
-    font-weight: 700;
-  `,
-  mediumHeader: css`
-    font-family: ${FONTS.mono};
-    color: ${SEMANTIC_COLORS.headerType};
-    font-weight: 700;
-    font-size: 1.2rem;
-  `,
-  smallHeader: css`
-    font-family: ${FONTS.mono};
-    color: ${SEMANTIC_COLORS.headerType};
-    font-size: 1rem;
-    font-weight: 700;
+    font-weight: 900;
   `,
 };
 
 export const ThemeSettings = {
-  colors: { ...THEME, ...SEMANTIC_COLORS },
+  colors: { ...COLORS, ...SEMANTIC_COLORS },
+  device: { ...DEVICE_WIDTHS.queries },
   fonts: FONTS,
   grid: { ...GRID, ...GRID_HELPERS },
   type: TYPE,

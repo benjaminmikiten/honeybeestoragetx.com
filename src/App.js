@@ -5,6 +5,7 @@ import { GlobalStyle, BodyStyle } from "./styles/GlobalStyle";
 import { Routes } from "./Routes";
 
 export const AppContext = React.createContext();
+
 export function App() {
   const context = {};
   return (
