@@ -6,13 +6,15 @@ import { ReactComponent as LogoSVG } from "./logo-honeyBeeStorage.svg";
 const StyledHero = styled.div`
   background-color: #ccc;
   position: relative;
+  overflow: hidden;
   @media ${({ theme }) => theme.device.tablet} {
-    height: 384px;
+    height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  @media ${({ theme }) => theme.device.tablet} {
+  @media ${({ theme }) => theme.device.desktop} {
+    height: 480px;
   }
 `;
 
@@ -28,7 +30,8 @@ const StyledBadge = styled.div`
   transition: all 0.3s ease;
   background-color: ${({ theme }) => theme.colors.blue};
   width: 100%;
-  padding: 1rem 2rem;
+  ${({ theme }) => theme.grid.LayoutContainer};
+  height: 77px;
   display: flex;
   justify-content: space-between;
   align-items: center;

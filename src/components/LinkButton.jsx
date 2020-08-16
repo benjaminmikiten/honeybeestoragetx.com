@@ -10,10 +10,9 @@ const SETTINGS = {
   },
 };
 const StyledLinkButton = styled.a`
-  text-decoration: none;
-  font-family: ${({ theme }) => theme.fonts.default};
+  ${({ theme }) => theme.type.body};
+  font-weight: bold;
   color: #000;
-  font-weight: 700;
   background-color: ${({ theme }) => theme.colors.yellow};
   display: inline-flex;
   width: auto;
@@ -23,7 +22,7 @@ const StyledLinkButton = styled.a`
   height: ${SETTINGS.small.height}px;
   line-height: ${SETTINGS.small.height}px;
 
-  font-size: 1rem;
+  font-size: 1.2rem;
   @media ${({ theme }) => theme.device.tablet} {
     font-size: 1.2rem;
     height: ${SETTINGS.large.height}px;

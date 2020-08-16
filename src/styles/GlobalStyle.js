@@ -6,11 +6,19 @@ export const BodyStyle = createGlobalStyle`
     background-color: ${({ theme }) => theme.colors.background};
     color: ${({ theme }) => theme.colors.bodyType};
     font-family: ${({ theme }) => theme.fonts.default};
+    font-size: 16px;
   }
 `;
 
 export const GlobalStyle = createGlobalStyle`
   ${normalize}
+
+  h1,h2,h3,h5,h6,li,p,a,address{
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+    text-decoration: none;
+  }
 
   *,
   *:after,
