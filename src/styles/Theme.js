@@ -24,6 +24,7 @@ const GRID = {
     margin: 18,
     gutter: 16,
     columns: 12,
+    maxWidth: 768 - 1,
   },
   tablet: {
     breakpoint: 768,
@@ -33,6 +34,7 @@ const GRID = {
     columns: 12,
   },
   desktop: {
+    maxWidth: 1200,
     breakpoint: 1200,
     margin: 64,
     gutter: 24,

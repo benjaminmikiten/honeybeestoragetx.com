@@ -1,5 +1,7 @@
 import React from "react";
+import { motion } from "framer-motion";
 import styled from "styled-components";
+import { useMobileBreakpoint } from "../hooks/useMobileBreakpoint";
 import { LinkButton } from "./LinkButton";
 import { ReactComponent as LogoSVG } from "./logo-honeyBeeStorage.svg";
 
@@ -26,8 +28,7 @@ const Logo = styled.div`
   }
 `;
 
-const StyledBadge = styled.div`
-  transition: all 0.3s ease;
+const StyledBadge = styled(motion.div)`
   background-color: ${({ theme }) => theme.colors.blue};
   width: 100%;
   ${({ theme }) => theme.grid.LayoutContainer};
@@ -51,7 +52,6 @@ const Background = styled.div`
   background-image: url(${(props) => props.background});
   background-position: center center;
   background-size: cover;
-  background-color: #ddd;
   position: relative;
   width: 100%;
   &:before {
@@ -72,9 +72,24 @@ const Background = styled.div`
 `;
 
 export const Hero = ({ children, logo, background }) => {
+  const isMobile = useMobileBreakpoint();
+
+  const initial = {
+    opacity: 0,
+    transform: !isMobile ? `translateY(50px) scale(0.95)` : `translateY(0) scale(1)`,
+  };
+  const animation = {
+    opacity: 1,
+    transform: `translateY(0px) scale(1)`,
+  };
+  const transition = {
+    type: "spring",
+    stiffness: 100,
+    damping: 20,
+  };
   return (
     <StyledHero>
-      <StyledBadge>
+      <StyledBadge initial={initial} animate={animation} transition={transition}>
         <Logo>
           <LogoSVG />
         </Logo>

@@ -27,7 +27,7 @@ const StyledPane = styled(motion.div)`
     width: 100%;
     display: flex;
     justify-content: center;
-    @media ${({ theme }) => theme.device.tablet} {
+    @media ${({ theme }) => theme.device.desktop} {
       justify-content: flex-start;
     }
   }

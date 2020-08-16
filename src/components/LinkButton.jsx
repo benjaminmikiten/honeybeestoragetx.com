@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 const SETTINGS = {
   small: {
@@ -10,7 +11,7 @@ const SETTINGS = {
   },
 };
 
-const StyledLinkButton = styled.a`
+const StyledLinkButton = styled(motion.a)`
   ${({ theme }) => theme.type.body};
   font-weight: bold;
   color: #000;
@@ -36,8 +37,22 @@ const StyledLinkButton = styled.a`
 `;
 
 export const LinkButton = ({ children, ...rest }) => {
+  const [hovered, setHovered] = useState(false);
+
+  const animation = {
+    transform: hovered ? `translateY(-5px)` : `translateY(0px)`,
+    boxShadow: hovered ? "0px 5px 10px rgba(0,0,0,0.2)" : "0px 0px 0px rgba(0,0,0,0)",
+  };
+  const transition = {
+    type: "spring",
+    damping: 20,
+    mass: 1,
+    velocity: 50,
+    stiffness: 100,
+  };
+
   return (
-    <StyledLinkButton {...rest} target={"_blank"} rel={"noreferrer noopenner"}>
+    <StyledLinkButton initial={false} animate={animation} transition={transition} onMouseLeave={() => setHovered(false)} onMouseOver={() => setHovered(true)} {...rest} target={"_blank"} rel={"noreferrer noopenner"}>
       {children}
     </StyledLinkButton>
   );
