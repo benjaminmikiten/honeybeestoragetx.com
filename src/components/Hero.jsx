@@ -7,7 +7,6 @@ import { ReactComponent as LogoSVG } from "./logo-honeyBeeStorage.svg";
 
 const StyledHero = styled.div`
   flex: 0 0 auto;
-  background-color: #ccc;
   position: relative;
   overflow: hidden;
   @media ${({ theme }) => theme.device.tablet} {
@@ -49,7 +48,7 @@ const StyledBadge = styled(motion.div)`
   }
 `;
 
-const Background = styled.div`
+const Background = styled(motion.div)`
   background-image: url(${(props) => props.background});
   background-position: center center;
   background-size: cover;
@@ -88,6 +87,7 @@ export const Hero = ({ children, logo, background }) => {
     stiffness: 100,
     damping: 20,
   };
+
   return (
     <StyledHero>
       <StyledBadge initial={initial} animate={animation} transition={transition}>
@@ -96,7 +96,7 @@ export const Hero = ({ children, logo, background }) => {
         </Logo>
         <LinkButton href={"https://www.uhaul.com/Locations/Self-Storage-near-Rogers-TX-76569/1035094/"}>See available units</LinkButton>
       </StyledBadge>
-      <Background background={background} />
+      <Background animate={{ opacity: 1 }} initial={{ opacity: 0 }} background={background} />
     </StyledHero>
   );
 };
