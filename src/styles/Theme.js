@@ -1,6 +1,6 @@
 import React from "react";
 import { ThemeProvider, css } from "styled-components";
-import { lighten } from "polished";
+import { lighten, darken } from "polished";
 
 const COLORS = {
   yellow: "#FAB516",
@@ -14,6 +14,7 @@ const SEMANTIC_COLORS = {
   activeHover: lighten(0.2, COLORS.yellow),
   headerType: "#fff",
   interactive: COLORS.yellow,
+  footer: darken(0.05, COLORS.blue),
 };
 const FONTS = {
   default: `'Source Sans Pro', sans`,
@@ -114,6 +115,21 @@ const TYPE = {
     line-height: 1.2;
     @media ${DEVICE_WIDTHS.queries.tablet} {
       font-size: 1.3rem;
+    }
+  `,
+  footer: css`
+    font-family: ${FONTS.default};
+    color: ${SEMANTIC_COLORS.bodyType};
+    opacity: 0.8;
+    font-size: 1rem;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.2;
+    @media ${DEVICE_WIDTHS.queries.tablet} {
+      font-size: 1rem;
+    }
+    &:not(:last-of-type) {
+      padding-bottom: 0.25em;
     }
   `,
   largeHeader: css`

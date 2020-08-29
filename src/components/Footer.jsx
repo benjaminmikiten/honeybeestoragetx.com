@@ -1,158 +1,28 @@
 import React from "react";
 import styled from "styled-components";
-import { LinkButton } from "../components/LinkButton";
-import { motion } from "framer-motion";
-import { Icon } from "../components/Icon";
-import { ReactComponent as PhoneSVG } from "./icon-phone.svg";
-import { ReactComponent as LocationSVG } from "./icon-location.svg";
+import moment from "moment";
 
-const StyledPane = styled(motion.div)`
-  ${({ theme }) => theme.grid.GridChild};
+export const StyledFooter = styled.footer`
+  background-color: ${({ theme }) => theme.colors.footer};
   flex: 0 0 auto;
-  padding-bottom: 2rem;
-
-  &:nth-of-type(1) {
-    width: 100%;
-    @media ${({ theme }) => theme.device.desktop} {
-      width: calc((8 / 12) * 100%);
-    }
-  }
-  &:nth-of-type(2) {
-    width: 100%;
-    @media ${({ theme }) => theme.device.desktop} {
-      width: calc((4 / 12) * 100%);
-    }
-  }
-  &:nth-of-type(3) {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    @media ${({ theme }) => theme.device.desktop} {
-      justify-content: flex-start;
-    }
-  }
-
-  h2 {
-    ${({ theme }) => theme.type.largeHeader};
-    text-align: left;
-    @media ${({ theme }) => theme.device.tabletOnly} {
-      text-align: center;
-      margin: 0 auto;
-      max-width: 820px;
-    }
-    @media ${({ theme }) => theme.device.tablet} {
-    }
-  }
-`;
-
-const StyledFooter = styled.div`
-  padding: 2.5rem 0;
-  ${({ theme }) => theme.grid.LayoutContainer};
-  width: 100%;
+  padding: 1rem 0;
   > div {
-    ${({ theme }) => theme.grid.GridParent};
-    justify-content: center;
-    flex-wrap: wrap;
+    ${({ theme }) => theme.grid.LayoutContainer};
+    text-align: center;
+  }
+  p {
+    ${({ theme }) => theme.type.footer};
   }
 `;
 
-const StyledContactItem = styled.a`
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  width: 230px;
-  padding-bottom: 1rem;
-
-  span {
-    ${({ theme }) => theme.type.body};
-    padding-left: 0.5rem;
-  }
-
-  svg path {
-    fill: ${({ theme }) => theme.colors.active};
-  }
-  &:hover svg path {
-    fill: ${({ theme }) => theme.colors.activeHover};
-  }
-
-  &::nth-of-type(1) {
-    @media ${({ theme }) => theme.mobileOnly} {
-      order: 2;
-    }
-  }
-  &::nth-of-type(2) {
-    @media ${({ theme }) => theme.mobileOnly} {
-      order: 1;
-    }
-  }
-
-  > div:first-child {
-    flex: 0 0 auto;
-  }
-  > div:last-child {
-    flex: 1 1 auto;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding-left: 1rem;
-  }
-`;
-
-const ContactItems = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  @media ${({ theme }) => theme.device.tabletOnly} {
-    justify-content: space-around;
-  }
-`;
-
-const ContactItem = ({ href, icon, children }) => {
-  return (
-    <StyledContactItem href={href} target={"_blank"} rel={"noreferrer noopenner"}>
-      <Icon>{icon}</Icon>
-      <span>{children}</span>
-    </StyledContactItem>
-  );
-};
-
-export const Footer = ({ children }) => {
-  const initialAnimation = {
-    opacity: 0,
-    transform: `translateY(20px)`,
-  };
-  const transition = {
-    type: "spring",
-    mass: 2,
-    damping: 15,
-    stiffness: 100,
-  };
-  const paneAnimation = {
-    opacity: 1,
-    transform: `translateY(0px)`,
-  };
-
+export const Footer = () => {
   return (
     <StyledFooter>
       <div>
-        <StyledPane animate={paneAnimation} initial={initialAnimation} transition={{ ...transition, delay: 0 }}>
-          <h2>Covered boat and RV storage in Central&nbsp;Texas</h2>
-        </StyledPane>
-        <StyledPane animate={paneAnimation} initial={initialAnimation} transition={{ ...transition, delay: 0.3 }}>
-          <ContactItems>
-            <ContactItem href={`tel:254-760-2565`} icon={<PhoneSVG />}>
-              (254) 760-2565
-            </ContactItem>
-
-            <ContactItem href={`https://g.page/Honey-Bee-Storage?share`} icon={<LocationSVG />}>
-              13417 Shaw Road, Rogers, TX 76569
-            </ContactItem>
-          </ContactItems>
-        </StyledPane>
-        <StyledPane animate={paneAnimation} initial={initialAnimation} transition={{ ...transition, delay: 0.6 }}>
-          <LinkButton href={"https://www.uhaul.com/Locations/Self-Storage-near-Rogers-TX-76569/1035094/"}>See available units</LinkButton>
-        </StyledPane>
+        <p>&copy; {moment().format("YYYY")} Honey Bee Storage</p>
+        <p>
+          <sup>*</sup> No trucks or trailers available to rent at this location.
+        </p>
       </div>
     </StyledFooter>
   );

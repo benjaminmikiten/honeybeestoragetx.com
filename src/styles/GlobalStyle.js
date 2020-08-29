@@ -18,6 +18,9 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     font-style: normal;
     text-decoration: none;
+    > sup{
+      /* font-size: 1em; */
+    }
   }
 
   *,

@@ -6,6 +6,7 @@ import { LinkButton } from "./LinkButton";
 import { ReactComponent as LogoSVG } from "./logo-honeyBeeStorage.svg";
 
 const StyledHero = styled.div`
+  flex: 0 0 auto;
   background-color: #ccc;
   position: relative;
   overflow: hidden;

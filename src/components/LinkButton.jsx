@@ -40,7 +40,7 @@ export const LinkButton = ({ children, ...rest }) => {
   const [hovered, setHovered] = useState(false);
 
   const animation = {
-    transform: hovered ? `translateY(-5px)` : `translateY(0px)`,
+    transform: hovered ? `translateY(-3px)` : `translateY(0px)`,
     boxShadow: hovered ? "0px 5px 10px rgba(0,0,0,0.2)" : "0px 0px 0px rgba(0,0,0,0)",
   };
   const transition = {
