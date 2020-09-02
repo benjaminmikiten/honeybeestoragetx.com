@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 export const useAPI = (url) => {
   const [data, setData] = useState(null);
@@ -8,11 +8,11 @@ export const useAPI = (url) => {
       fetch(`${API_URL}${url}`)
         .then((response) => response.json())
         .then((result) => {
-          console.log('API', result)
-          setData(result)
-        })
-    }
-    fetchData()
-  }, []);
-  return { data }
-}
+          console.log("API", result);
+          setData(result);
+        });
+    };
+    fetchData();
+  }, [url]);
+  return { data };
+};
