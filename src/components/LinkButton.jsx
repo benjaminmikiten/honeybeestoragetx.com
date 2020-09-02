@@ -11,9 +11,12 @@ const SETTINGS = {
   },
 };
 
-const StyledLinkButton = styled(motion.a)`
+const StyledButton = styled(motion.a)`
   ${({ theme }) => theme.type.body};
 
+  outline: 0;
+  border: none;
+  border: 0;
   font-weight: bold;
   width: auto;
   cursor: pointer;
@@ -55,6 +58,28 @@ const StyledLinkButton = styled(motion.a)`
   }
 `;
 
+export const Button = ({ children, variation = "primary", ...rest }) => {
+  const [hovered, setHovered] = useState(false);
+
+  const animation = {
+    boxShadow: hovered ? "0px 5px 10px rgba(0,0,0,0.2)" : "0px 0px 0px rgba(0,0,0,0)",
+  };
+
+  const transition = {
+    type: "spring",
+    damping: 20,
+    mass: 1,
+    velocity: 50,
+    stiffness: 100,
+  };
+
+  return (
+    <StyledButton as={"button"} variation={variation} initial={false} animate={animation} transition={transition} onMouseLeave={() => setHovered(false)} onMouseOver={() => setHovered(true)} {...rest}>
+      {children}
+    </StyledButton>
+  );
+};
+
 export const LinkButton = ({ children, variation = "primary", ...rest }) => {
   const [hovered, setHovered] = useState(false);
 
@@ -71,8 +96,8 @@ export const LinkButton = ({ children, variation = "primary", ...rest }) => {
   };
 
   return (
-    <StyledLinkButton variation={variation} initial={false} animate={animation} transition={transition} onMouseLeave={() => setHovered(false)} onMouseOver={() => setHovered(true)} {...rest} target={"_blank"} rel={"noreferrer noopenner"}>
+    <StyledButton as={"a"} variation={variation} initial={false} animate={animation} transition={transition} onMouseLeave={() => setHovered(false)} onMouseOver={() => setHovered(true)} {...rest} target={"_blank"} rel={"noreferrer noopenner"}>
       {children}
-    </StyledLinkButton>
+    </StyledButton>
   );
 };

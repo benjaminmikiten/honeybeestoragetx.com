@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { LinkButton } from "./LinkButton";
+import { Button } from "./LinkButton";
 import { motion } from "framer-motion";
 import { Icon } from "./Icon";
 import { ReactComponent as PhoneSVG } from "./icon-phone.svg";
@@ -137,7 +137,7 @@ const ContactItem = ({ href, icon, children }) => {
   );
 };
 
-export const Body = ({ children }) => {
+export const Body = ({ children, handleClickScroll }) => {
   const initialAnimation = {
     opacity: 0,
     transform: `translateY(20px)`,
@@ -185,7 +185,7 @@ export const Body = ({ children }) => {
           </ContactItems>
         </StyledPane>
         <StyledPane animate={paneAnimation} initial={initialAnimation} transition={{ ...transition, delay: 0.6 }}>
-          <LinkButton href={"https://www.uhaul.com/Locations/Self-Storage-near-Rogers-TX-76569/1035094/"}>See available units</LinkButton>
+          <Button onClick={handleClickScroll}>See available units</Button>
         </StyledPane>
       </div>
     </StyledBody>

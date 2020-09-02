@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import { useMobileBreakpoint } from "../hooks/useMobileBreakpoint";
-import { LinkButton } from "./LinkButton";
+import { Button } from "./LinkButton";
 import { ReactComponent as LogoSVG } from "./logo-honeyBeeStorage.svg";
 
 const StyledHero = styled.div`
@@ -39,7 +39,8 @@ const StyledBadge = styled(motion.div)`
   align-items: center;
 
   @media ${({ theme }) => theme.device.mobileOnly} {
-    a {
+    a,
+    button {
       display: none;
     }
   }
@@ -77,7 +78,7 @@ const Background = styled.div`
   }
 `;
 
-export const Hero = ({ children, logo, background }) => {
+export const Hero = ({ children, logo, background, handleClickScroll }) => {
   const isMobile = useMobileBreakpoint();
 
   const initial = {
@@ -99,7 +100,8 @@ export const Hero = ({ children, logo, background }) => {
         <Logo>
           <LogoSVG />
         </Logo>
-        <LinkButton href={"https://www.uhaul.com/Locations/Self-Storage-near-Rogers-TX-76569/1035094/"}>See available units</LinkButton>
+
+        <Button onClick={handleClickScroll}>See Available Units</Button>
       </StyledBadge>
       <Background background={background} />
     </StyledHero>
