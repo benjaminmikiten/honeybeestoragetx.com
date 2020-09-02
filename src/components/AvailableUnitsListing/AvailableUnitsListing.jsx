@@ -143,7 +143,7 @@ export const AvailableUnitsListing = React.forwardRef((props, ref) => {
       <div>
         {data ? (
           <>
-            <h2>Available Unit Types</h2>
+            <h2>Available Units</h2>
             <Units units={data.Location.Units} />
           </>
         ) : (
