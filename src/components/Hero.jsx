@@ -34,9 +34,14 @@ const StyledBadge = styled(motion.div)`
   ${({ theme }) => theme.grid.LayoutContainer};
   height: 77px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 
+  @media ${({ theme }) => theme.device.mobileOnly} {
+    a {
+      display: none;
+    }
+  }
   @media ${({ theme }) => theme.device.tablet} {
     background-color: transparent;
     position: relative;

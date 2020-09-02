@@ -21,6 +21,7 @@ export const GlobalStyle = createGlobalStyle`
     > sup{
       /* font-size: 1em; */
     }
+    -webkit-font-smoothing: antialiased;
   }
 
   *,
