@@ -11,7 +11,10 @@ export const IndexPage = () => {
   return (
     <Page>
       <Hero background={background} />
-      <Body />
+      <main>
+        <Body />
+        <AvailableUnitsListing />
+      </main>
       <Footer />
     </Page>
   );

@@ -24,13 +24,13 @@ const StyledLinkButton = styled(motion.a)`
       case "uhaul":
         return css`
           background-color: ${({ theme }) => theme.colors.uhaulBrand};
-          color: ${({ theme }) => theme.colors.white};
+          color: ${({ theme }) => theme.colors.dark};
         `;
       case "primary":
       default:
         return css`
           background-color: ${({ theme }) => theme.colors.active};
-          color: ${({ theme }) => theme.colors.bodyType};
+          color: ${({ theme }) => theme.colors.dark};
         `;
     }
   }};
