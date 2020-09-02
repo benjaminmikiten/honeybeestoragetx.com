@@ -5,6 +5,8 @@ import { Body } from "../components/Body";
 import { Footer } from "../components/Footer";
 import background from "./building-background-01.jpg";
 
+import { AvailableUnitsListing } from "../components/AvailableUnitsListing/AvailableUnitsListing";
+
 export const IndexPage = () => {
   return (
     <Page>

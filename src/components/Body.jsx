@@ -109,12 +109,11 @@ const ContactItems = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   @media ${({ theme }) => theme.device.tabletOnly} {
     justify-content: space-around;
   }
   @media ${({ theme }) => theme.device.desktop} {
-    justify-content: flex-start;
   }
 `;
 
