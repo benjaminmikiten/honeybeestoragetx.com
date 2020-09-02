@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import { useMobileBreakpoint } from "../hooks/useMobileBreakpoint";
-import { LinkButton } from "./LinkButton";
+import { Button } from "./LinkButton";
 import { ReactComponent as LogoSVG } from "./logo-honeyBeeStorage.svg";
 
 const StyledHero = styled.div`
@@ -34,9 +34,15 @@ const StyledBadge = styled(motion.div)`
   ${({ theme }) => theme.grid.LayoutContainer};
   height: 77px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 
+  @media ${({ theme }) => theme.device.mobileOnly} {
+    a,
+    button {
+      display: none;
+    }
+  }
   @media ${({ theme }) => theme.device.tablet} {
     background-color: transparent;
     position: relative;
@@ -71,7 +77,7 @@ const Background = styled(motion.div)`
   }
 `;
 
-export const Hero = ({ children, logo, background }) => {
+export const Hero = ({ children, logo, background, handleClickScroll }) => {
   const isMobile = useMobileBreakpoint();
 
   const initial = {
@@ -94,7 +100,8 @@ export const Hero = ({ children, logo, background }) => {
         <Logo>
           <LogoSVG />
         </Logo>
-        <LinkButton href={"https://www.uhaul.com/Locations/Self-Storage-near-Rogers-TX-76569/1035094/"}>See available units</LinkButton>
+
+        <Button onClick={handleClickScroll}>See Available Units</Button>
       </StyledBadge>
       <Background animate={{ opacity: 1 }} initial={{ opacity: 0 }} background={background} />
     </StyledHero>

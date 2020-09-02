@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { LinkButton } from "./LinkButton";
+import { Button } from "./LinkButton";
 import { motion } from "framer-motion";
 import { Icon } from "./Icon";
 import { ReactComponent as PhoneSVG } from "./icon-phone.svg";
@@ -14,13 +14,19 @@ const StyledPane = styled(motion.div)`
 
   &:nth-of-type(1) {
     width: 100%;
+    order: 2;
+    @media ${({ theme }) => theme.device.tablet} {
+      order: 1;
+    }
     @media ${({ theme }) => theme.device.desktop} {
       width: calc((8 / 12) * 100%);
     }
   }
   &:nth-of-type(2) {
     width: 100%;
+    order: 3;
     @media ${({ theme }) => theme.device.desktop} {
+      order: 2;
       width: calc((4 / 12) * 100%);
     }
   }
@@ -28,16 +34,23 @@ const StyledPane = styled(motion.div)`
     width: 100%;
     display: flex;
     justify-content: center;
-    @media ${({ theme }) => theme.device.desktop} {
+    order: 2;
+    @media ${({ theme }) => theme.device.tablet} {
+      order: 3;
       justify-content: flex-start;
+      display: none;
     }
   }
 
   p {
     ${({ theme }) => theme.type.body};
+    text-align: left;
+    @media ${({ theme }) => theme.device.tabletOnly} {
+      text-align: center;
+    }
   }
   h2 {
-    ${({ theme }) => theme.type.largeHeader};
+    ${({ theme }) => theme.type.giantHeader};
     text-align: left;
     padding-bottom: 0.25em;
     @media ${({ theme }) => theme.device.tabletOnly} {
@@ -52,9 +65,7 @@ const StyledPane = styled(motion.div)`
 
 const StyledBody = styled.div`
   padding: 2.5rem 0;
-  ${({ theme }) => theme.grid.LayoutContainer};
-  height: 100%;
-  flex: 1 1 auto;
+
   width: 100%;
   > div {
     ${({ theme }) => theme.grid.GridParent};
@@ -109,12 +120,11 @@ const ContactItems = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   @media ${({ theme }) => theme.device.tabletOnly} {
     justify-content: space-around;
   }
   @media ${({ theme }) => theme.device.desktop} {
-    justify-content: flex-start;
   }
 `;
 
@@ -127,7 +137,7 @@ const ContactItem = ({ href, icon, children }) => {
   );
 };
 
-export const Body = ({ children }) => {
+export const Body = ({ children, handleClickScroll }) => {
   const initialAnimation = {
     opacity: 0,
     transform: `translateY(20px)`,
@@ -175,7 +185,7 @@ export const Body = ({ children }) => {
           </ContactItems>
         </StyledPane>
         <StyledPane animate={paneAnimation} initial={initialAnimation} transition={{ ...transition, delay: 0.6 }}>
-          <LinkButton href={"https://www.uhaul.com/Locations/Self-Storage-near-Rogers-TX-76569/1035094/"}>See available units</LinkButton>
+          <Button onClick={handleClickScroll}>See available units</Button>
         </StyledPane>
       </div>
     </StyledBody>

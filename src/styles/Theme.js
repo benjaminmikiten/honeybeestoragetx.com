@@ -5,17 +5,26 @@ import { lighten, darken } from "polished";
 const COLORS = {
   yellow: "#FAB516",
   blue: "#074F83",
+  dark: "#1F1300",
+  grey: "#666",
+  green: darken(0.25, "#9EBC9F"),
+  white: "#F4F2F3",
+  uhaulBrand: "#ff5314",
 };
 
 const SEMANTIC_COLORS = {
   background: COLORS.blue,
-  bodyType: "white",
+  bodyType: COLORS.white,
   active: COLORS.yellow,
-  activeHover: lighten(0.2, COLORS.yellow),
-  headerType: "#fff",
+  activeHover: lighten(0.1, COLORS.yellow),
+  headerType: COLORS.white,
   interactive: COLORS.yellow,
   footer: darken(0.05, COLORS.blue),
+  primary: COLORS.yellow,
+  secondary: COLORS.blue,
+  tertiary: COLORS.green,
 };
+
 const FONTS = {
   default: `'Source Sans Pro', sans`,
 };
@@ -62,30 +71,29 @@ const GRID_HELPERS = {
   GridParent: css`
     display: flex;
     justify-content: space-between;
+    position: relative;
     width: calc(100% + ${GRID.mobile.gutter}px);
-    margin-left: calc(${GRID.mobile.gutter} * -0.5px);
-    margin-right: calc(${GRID.mobile.gutter} * -0.5px);
+    height: calc(100% + ${GRID.mobile.gutter}px);
+    margin: calc(${GRID.mobile.gutter} * -0.5px);
     @media ${DEVICE_WIDTHS.queries.tablet} {
       width: calc(100% + ${GRID.tablet.gutter}px);
-      margin-left: calc(${GRID.tablet.gutter} * -0.5px);
-      margin-right: calc(${GRID.tablet.gutter} * -0.5px);
+      height: calc(100% + ${GRID.tablet.gutter}px);
+      margin: calc(${GRID.tablet.gutter} * -0.5px);
     }
     @media ${DEVICE_WIDTHS.queries.desktop} {
-      width: calc(100% + ${GRID.tablet.desktop}px);
-      margin-right: calc(${GRID.desktop.gutter} * -0.5px);
-      margin-left: calc(${GRID.desktop.gutter} * -0.5px);
+      width: calc(100% + ${GRID.desktop.gutter}px);
+      height: calc(100% + ${GRID.desktop.gutter}px);
+      margin: calc(${GRID.desktop.gutter} * -0.5px);
     }
   `,
   GridChild: css`
-    padding-left: calc(${GRID.mobile.gutter} * 0.5px);
-    padding-right: calc(${GRID.mobile.gutter} * 0.5px);
+    position: relative;
+    padding: calc(${GRID.mobile.gutter} * 0.5px);
     @media ${DEVICE_WIDTHS.queries.tablet} {
-      padding-left: calc(${GRID.tablet.gutter} * 0.5px);
-      padding-right: calc(${GRID.tablet.gutter} * 0.5px);
+      padding: calc(${GRID.tablet.gutter} * 0.5px);
     }
     @media ${DEVICE_WIDTHS.queries.desktop} {
-      padding-right: calc(${GRID.desktop.gutter} * 0.5px);
-      padding-left: calc(${GRID.desktop.gutter} * 0.5px);
+      padding: calc(${GRID.desktop.gutter} * 0.5px);
     }
   `,
   LayoutContainer: css`
@@ -133,6 +141,36 @@ const TYPE = {
     }
   `,
   largeHeader: css`
+    font-family: ${FONTS.default};
+    color: ${SEMANTIC_COLORS.headerType};
+    font-size: 2.5rem;
+    line-height: 1.2;
+    font-weight: 700;
+    @media ${DEVICE_WIDTHS.queries.tablet} {
+      font-size: 2.5rem;
+    }
+  `,
+  mediumHeader: css`
+    font-family: ${FONTS.default};
+    color: ${SEMANTIC_COLORS.headerType};
+    font-size: 2rem;
+    line-height: 1.2;
+    font-weight: 700;
+    @media ${DEVICE_WIDTHS.queries.tablet} {
+      font-size: 2.5rem;
+    }
+  `,
+  smallHeader: css`
+    font-family: ${FONTS.default};
+    color: ${SEMANTIC_COLORS.headerType};
+    font-size: 1.2rem;
+    line-height: 1.2;
+    font-weight: 400;
+    @media ${DEVICE_WIDTHS.queries.tablet} {
+      font-size: 1.5rem;
+    }
+  `,
+  giantHeader: css`
     font-family: ${FONTS.default};
     color: ${SEMANTIC_COLORS.headerType};
     font-size: 2rem;
