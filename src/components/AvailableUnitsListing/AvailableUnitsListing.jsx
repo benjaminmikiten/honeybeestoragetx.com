@@ -109,7 +109,7 @@ export const Units = ({ units }) => {
 };
 
 const StyledAvailableUnitsListing = styled.div`
-  ${({ theme }) => theme.grid.LayoutContainer};
+  /* ${({ theme }) => theme.grid.LayoutContainer}; */
   width: 100%;
   > div {
     border-top: solid 1px ${({ theme }) => theme.colors.white};

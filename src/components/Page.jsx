@@ -5,6 +5,11 @@ const StyledPage = styled.div`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  > main {
+    ${({ theme }) => theme.grid.LayoutContainer};
+    height: 100%;
+    flex: 1 1 auto;
+  }
 `;
 
 export const Page = ({ children }) => {
