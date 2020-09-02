@@ -59,10 +59,6 @@ export const LinkButton = ({ children, variation = "primary", ...rest }) => {
   const [hovered, setHovered] = useState(false);
 
   const animation = {
-<<<<<<< HEAD
-    transform: hovered ? `translateY(-3px)` : `translateY(0px)`,
-=======
->>>>>>> available-units
     boxShadow: hovered ? "0px 5px 10px rgba(0,0,0,0.2)" : "0px 0px 0px rgba(0,0,0,0)",
   };
 
