@@ -7,7 +7,7 @@ const COLORS = {
   blue: "#074F83",
   dark: "#1F1300",
   grey: "#666",
-  green: darken(0.2, "#9EBC9F"),
+  green: darken(0.25, "#9EBC9F"),
   white: "#F4F2F3",
   uhaulBrand: "#ff5314",
 };
