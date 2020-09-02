@@ -3,23 +3,33 @@ import styled from 'styled-components';
 import { useAPI } from '../../hooks/useAPI';
 import { Loader } from '../Loader';
 
-const StyledAvailableUnits = styled.div``;
-const StyledAvailableUnit = styled.div``;
+const StyledUnits = styled.div``;
+const StyledUnit = styled.div``;
 
-export const Unit = ({ }) => {
+const StyledTable = styled.table``;
+
+
+export const Unit = (props) => {
+  const { Height, Monthly, Length, SquareFootage, UnitSize, Width, VacantUnits, CubicFootage, TotalUnits } = props;
+
   return (
-    <div>
-      UNIT
-    </div>
+    <StyledUnit>
+      <div>${UnitSize} Covered Storage Space</div>
+      <StyledTable>
+
+      </StyledTable>
+    </StyledUnit>
   )
 };
+
+
 export const Units = ({ units }) => {
   return (
-    <div>
+    <StyledUnits>
       {units.map((u, i) => {
         return <Unit {...u} key={i} />
       })}
-    </div>
+    </StyledUnits>
   )
 };
 
