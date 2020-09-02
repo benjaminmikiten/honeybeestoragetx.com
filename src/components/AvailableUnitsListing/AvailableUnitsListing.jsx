@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { useAPI } from "../../hooks/useAPI";
 import { Loader } from "../Loader";
 import { LinkButton } from "../LinkButton";
-import { Table } from "../Table";
 import { motion } from "framer-motion";
 import { transparentize } from "polished";
 
@@ -12,13 +11,6 @@ const StyledUnits = styled.div`
     display: flex;
   }
 `;
-
-const Badge = styled.div`
-  display: inline-block;
-  ${({ theme }) => theme.grid.GridChild};
-  ${({ theme }) => theme.type.smallHeader};
-`;
-
 const StyledUnit = styled(motion.div)`
   width: 100%;
   background-color: ${({ theme }) => transparentize(0, theme.colors.white)};
@@ -77,9 +69,9 @@ const StyledUnit = styled(motion.div)`
 `;
 
 export const Unit = (props) => {
-  const { Height, Monthly, Length, SquareFootage, UnitSize, Width, VacantUnits, CubicFootage, TotalUnits } = props;
+  const { Height, Monthly, Length, VacantUnits, TotalUnits } = props;
 
-  const tableData = [["Height", Height], ["Length", Length], []];
+  // const tableData = [["Height", Height], ["Length", Length], []];
 
   const initial = {
     opacity: 0,
