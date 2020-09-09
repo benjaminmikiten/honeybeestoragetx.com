@@ -175,8 +175,7 @@ export const Body = ({ children, handleClickScroll }) => {
             <ContactItem href={`https://g.page/Honey-Bee-Storage?share`} icon={<LocationSVG />}>
               <address>
                 13417 Shaw Road, <br />
-                Rogers, TX <br />
-                76569
+                Rogers, TX, 76569
               </address>
             </ContactItem>
             <ContactItem href={mailto} icon={<EmailSVG />}>
