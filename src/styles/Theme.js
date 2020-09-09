@@ -7,7 +7,7 @@ const COLORS = {
   blue: "#074F83",
   dark: "#1F1300",
   grey: "#666",
-  green: darken(0.25, "#9EBC9F"),
+  green: "#078379",
   white: "#F4F2F3",
   uhaulBrand: "#ff5314",
 };
@@ -118,7 +118,7 @@ const TYPE = {
     font-family: ${FONTS.default};
     color: ${SEMANTIC_COLORS.bodyType};
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 400;
     font-style: normal;
     line-height: 1.2;
     @media ${DEVICE_WIDTHS.queries.tablet} {
