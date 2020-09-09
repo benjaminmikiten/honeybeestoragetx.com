@@ -94,8 +94,10 @@ const StyledContactItem = styled.a`
   svg path {
     fill: ${({ theme }) => theme.colors.active};
   }
-  &:hover svg path {
-    fill: ${({ theme }) => theme.colors.activeHover};
+  @media (hover: hover) {
+    &:hover svg path {
+      fill: ${({ theme }) => theme.colors.activeHover};
+    }
   }
 
   &::nth-of-type(1) {
