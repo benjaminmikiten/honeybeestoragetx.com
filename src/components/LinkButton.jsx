@@ -5,9 +5,11 @@ import { motion } from "framer-motion";
 const SETTINGS = {
   small: {
     height: 37,
+    borderWidth: 4,
   },
   large: {
     height: 43,
+    borderWidth: 4,
   },
 };
 
@@ -24,27 +26,28 @@ const StyledButton = styled(motion.a)`
 
   ${({ variation }) => {
     switch (variation) {
-      case "uhaul":
-        return css`
-          background-color: ${({ theme }) => theme.colors.uhaulBrand};
-          color: ${({ theme }) => theme.colors.dark};
-        `;
       case "primary":
       default:
         return css`
           background-color: ${({ theme }) => theme.colors.active};
-          color: ${({ theme }) => theme.colors.dark};
+          color: ${({ theme }) => theme.colors.blue};
+          border-color: ${({ theme }) => theme.colors.active};
         `;
     }
   }};
 
-  transition: all 0.3s ease;
   &:hover {
-    background-color: ${({ theme }) => theme.colors.activeHover};
+    border-color: ${({ theme }) => theme.colors.active};
+    background-color: ${({ theme }) => theme.colors.blue};
+    color: ${({ theme }) => theme.colors.yellow};
   }
 
+  transition: all 0.3s ease;
+
+  border-style: solid;
+  border-width: ${SETTINGS.small.borderWidth}px;
   height: ${SETTINGS.small.height}px;
-  line-height: ${SETTINGS.small.height}px;
+  line-height: ${SETTINGS.small.height - SETTINGS.small.borderWidth * 2}px;
   font-size: 1rem;
   text-align: center;
   display: block;
@@ -53,8 +56,9 @@ const StyledButton = styled(motion.a)`
     width: auto;
     display: inline-flex;
     font-size: 1.2rem;
+    border-width: ${SETTINGS.large.borderWidth}px;
     height: ${SETTINGS.large.height}px;
-    line-height: ${SETTINGS.large.height}px;
+    line-height: ${SETTINGS.large.height - SETTINGS.large.borderWidth * 2}px;
   }
 `;
 
