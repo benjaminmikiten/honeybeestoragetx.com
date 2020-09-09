@@ -6,11 +6,12 @@ import { Icon } from "./Icon";
 import { ReactComponent as PhoneSVG } from "./icon-phone.svg";
 import { ReactComponent as LocationSVG } from "./icon-location.svg";
 import { ReactComponent as EmailSVG } from "./icon-email.svg";
+import { Spacer } from "./Spacer";
 
 const StyledPane = styled(motion.div)`
   ${({ theme }) => theme.grid.GridChild};
   flex: 0 0 auto;
-  padding-bottom: 2rem;
+  /* padding-bottom: 2rem; */
 
   &:nth-of-type(1) {
     width: 100%;
@@ -60,6 +61,9 @@ const StyledPane = styled(motion.div)`
     }
     @media ${({ theme }) => theme.device.tablet} {
     }
+  }
+  h2 + p {
+    font-weight: 400;
   }
 `;
 
@@ -165,6 +169,7 @@ export const Body = ({ children, handleClickScroll }) => {
           <p>
             Powered by U-Haul.com<sup>*</sup>
           </p>
+          <Spacer height={20} />
         </StyledPane>
         <StyledPane animate={paneAnimation} initial={initialAnimation} transition={{ ...transition, delay: 0.3 }}>
           <ContactItems>
