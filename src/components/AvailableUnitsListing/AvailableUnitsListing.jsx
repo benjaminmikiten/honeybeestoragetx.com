@@ -92,9 +92,7 @@ export const Unit = (props) => {
         <h3>{`${Height}′⨯${Length}′⨯${Height}′`}</h3>
         <h3>{`$${Monthly}/mo`}</h3>
         <div>
-          <LinkButton variation={"uhaul"} href={`https://www.uhaul.com/Locations/Self-Storage-near-Rogers-TX-76569/1035094/`}>
-            Rent Now at U-Haul.com
-          </LinkButton>
+          <LinkButton href={`https://www.uhaul.com/Locations/Self-Storage-near-Rogers-TX-76569/1035094/`}>Rent Now at U-Haul.com</LinkButton>
         </div>
         <h3>{`${VacantUnits} of ${TotalUnits} available`}</h3>
       </div>
