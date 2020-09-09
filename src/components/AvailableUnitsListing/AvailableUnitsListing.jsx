@@ -96,7 +96,7 @@ export const Unit = (props) => {
             Rent Now at U-Haul.com
           </LinkButton>
         </div>
-        <h3>{`${VacantUnits}/${TotalUnits} available`}</h3>
+        <h3>{`${VacantUnits} of ${TotalUnits} available`}</h3>
       </div>
       {/* <Table tableData={tableData} /> */}
     </StyledUnit>
