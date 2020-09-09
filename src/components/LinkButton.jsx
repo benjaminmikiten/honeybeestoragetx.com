@@ -36,10 +36,12 @@ const StyledButton = styled(motion.a)`
     }
   }};
 
-  &:hover {
-    border-color: ${({ theme }) => theme.colors.active};
-    background-color: ${({ theme }) => theme.colors.blue};
-    color: ${({ theme }) => theme.colors.yellow};
+  @media (hover: hover) {
+    &:hover {
+      border-color: ${({ theme }) => theme.colors.active};
+      background-color: ${({ theme }) => theme.colors.blue};
+      color: ${({ theme }) => theme.colors.yellow};
+    }
   }
 
   transition: all 0.3s ease;
