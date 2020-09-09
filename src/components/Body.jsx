@@ -87,6 +87,7 @@ const StyledContactItem = styled.a`
 
   span {
     ${({ theme }) => theme.type.body};
+    font-weight: 600;
     padding-left: 0.5rem;
   }
 
@@ -167,7 +168,7 @@ export const Body = ({ children, handleClickScroll }) => {
         <StyledPane animate={paneAnimation} initial={initialAnimation} transition={{ ...transition, delay: 0 }}>
           <h2>Covered boat and RV storage in Central&nbsp;Texas</h2>
           <p>
-            Powered by U-Haul.com<sup>*</sup>
+            Powered by U-Haul<sup>*</sup>
           </p>
           <Spacer height={20} />
         </StyledPane>
