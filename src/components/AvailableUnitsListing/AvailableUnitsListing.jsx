@@ -69,9 +69,7 @@ const StyledUnit = styled(motion.div)`
 `;
 
 export const Unit = (props) => {
-  const { Height, Monthly, Length, VacantUnits, TotalUnits } = props;
-
-  // const tableData = [["Height", Height], ["Length", Length], []];
+  const { Height = 14, Monthly = 75, Width = 28, Length = 14, VacantUnits = null, TotalUnits = null } = props;
 
   const initial = {
     opacity: 0,
@@ -89,19 +87,19 @@ export const Unit = (props) => {
   return (
     <StyledUnit initial={initial} animate={animation} transition={transition}>
       <div>
-        <h3>{`${Height}′⨯${Length}′⨯${Height}′`}</h3>
+        <h3>{`${Length}′⨯${Width}′⨯${Height}′`}</h3>
         <h3>{`$${Monthly}/mo`}</h3>
         <div>
           <LinkButton href={`https://www.uhaul.com/Locations/Self-Storage-near-Rogers-TX-76569/1035094/`}>Rent Now at U-Haul.com</LinkButton>
         </div>
-        <h3>{`${VacantUnits} of ${TotalUnits} available`}</h3>
+        {VacantUnits && TotalUnits && <h3>{`${VacantUnits} of ${TotalUnits} available`}</h3>}
       </div>
       {/* <Table tableData={tableData} /> */}
     </StyledUnit>
   );
 };
 
-export const Units = ({ units }) => {
+export const Units = ({ units = [{}] }) => {
   return (
     <StyledUnits>
       <div>
@@ -142,7 +140,7 @@ export const AvailableUnitsListing = React.forwardRef((props, ref) => {
         {data ? (
           <>
             <h2>Available Units</h2>
-            <Units units={data.Location.Units} />
+            <Units units={data.Location?.Units} />
           </>
         ) : (
           <Loader />
