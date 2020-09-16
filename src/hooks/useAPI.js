@@ -29,6 +29,6 @@ export const useAPI = (url) => {
     };
 
     fetchData();
-  }, [url]);
+  }, [url, requestTimeout, TIMEOUT_DURATION]);
   return { data };
 };
