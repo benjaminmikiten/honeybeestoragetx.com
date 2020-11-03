@@ -4,6 +4,8 @@ import styled from "styled-components";
 import { useMobileBreakpoint } from "../hooks/useMobileBreakpoint";
 import { Button } from "./LinkButton";
 import { ReactComponent as LogoSVG } from "./logo-honeyBeeStorage.svg";
+import { LinkButton } from "./LinkButton";
+import useGoogleOptimize from "@react-hook/google-optimize";
 
 const StyledHero = styled.div`
   flex: 0 0 auto;
@@ -94,6 +96,8 @@ export const Hero = ({ children, logo, background, handleClickScroll }) => {
     damping: 20,
   };
 
+  const ABTest = useGoogleOptimize("cc_W-MvdRWKEAr1T0sFG9A", [true, false]);
+
   return (
     <StyledHero>
       <StyledBadge initial={initial} animate={animation} transition={transition}>
@@ -101,7 +105,7 @@ export const Hero = ({ children, logo, background, handleClickScroll }) => {
           <LogoSVG />
         </Logo>
 
-        <Button onClick={handleClickScroll}>See Available Units</Button>
+        {!ABTest ? <Button onClick={handleClickScroll}>See Available Units</Button> : <LinkButton href={`https://www.uhaul.com/Locations/Self-Storage-near-Rogers-TX-76569/1035094/`}>Rent Now at U-Haul.com</LinkButton>}
       </StyledBadge>
       <Background animate={{ opacity: 1 }} initial={{ opacity: 0 }} background={background} />
     </StyledHero>
