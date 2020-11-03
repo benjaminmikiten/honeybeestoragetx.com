@@ -7,7 +7,6 @@ import { ReactComponent as PhoneSVG } from "./icon-phone.svg";
 import { ReactComponent as LocationSVG } from "./icon-location.svg";
 import { ReactComponent as EmailSVG } from "./icon-email.svg";
 import { Spacer } from "./Spacer";
-import useGoogleOptimize from "@react-hook/google-optimize";
 
 const StyledPane = styled(motion.div)`
   ${({ theme }) => theme.grid.GridChild};
