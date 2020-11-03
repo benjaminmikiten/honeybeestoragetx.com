@@ -6,6 +6,8 @@ import { LinkButton } from "../LinkButton";
 import { motion } from "framer-motion";
 import { transparentize } from "polished";
 
+import useGoogleOptimize from "@react-hook/google-optimize";
+
 const StyledUnits = styled.div`
   > div {
     display: flex;
@@ -84,6 +86,8 @@ export const Unit = (props) => {
     type: "spring",
   };
 
+  const ABTest = useGoogleOptimize("cc_W-MvdRWKEAr1T0sFG9A", [true, false]);
+
   return (
     <StyledUnit initial={initial} animate={animation} transition={transition}>
       <div>
@@ -92,7 +96,7 @@ export const Unit = (props) => {
         <div>
           <LinkButton href={`https://www.uhaul.com/Locations/Self-Storage-near-Rogers-TX-76569/1035094/`}>Rent Now at U-Haul.com</LinkButton>
         </div>
-        {VacantUnits && TotalUnits && <h3>{`${VacantUnits} of ${TotalUnits} available`}</h3>}
+        {ABTest ? <>{VacantUnits && TotalUnits && <h3>{`${VacantUnits} of ${TotalUnits} available`}</h3>}</> : null}
       </div>
       {/* <Table tableData={tableData} /> */}
     </StyledUnit>
