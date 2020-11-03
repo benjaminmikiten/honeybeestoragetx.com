@@ -1409,6 +1409,13 @@
     style-value-types "^3.1.7"
     tslib "^1.10.0"
 
+"@react-hook/google-optimize@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@react-hook/google-optimize/-/google-optimize-1.2.1.tgz#918e848b215f540be4a2b0acf4a1b82596184a9b"
+  integrity sha512-KGWF81Do50DyiPTR7XYDLwMqh6z72L5doEIhvzme6ous55tPCVx7a6whVsd1f4Fyr/9uWai9WlZQq5M5+x5MNw==
+  dependencies:
+    "@types/gtag.js" "^0.0.3"
+
 "@sheerun/mutationobserver-shim@^0.3.2":
   version "0.3.3"
   resolved "https://registry.yarnpkg.com/@sheerun/mutationobserver-shim/-/mutationobserver-shim-0.3.3.tgz#5405ee8e444ed212db44e79351f0c70a582aae25"
@@ -1625,6 +1632,11 @@
   dependencies:
     "@types/minimatch" "*"
     "@types/node" "*"
+
+"@types/gtag.js@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@types/gtag.js/-/gtag.js-0.0.3.tgz#bbc414030b2143fc7874260ab825aac82c42928e"
+  integrity sha512-iRF/4Q3G1t0OTNMjK52tpGSQPgEsYzWQL1IdVXt9BywK6MUK3ypB7LaoEQa8sW9gPXENoU1xAyCxqJhMkB2rCA==
 
 "@types/istanbul-lib-coverage@*", "@types/istanbul-lib-coverage@^2.0.0":
   version "2.0.3"
@@ -8909,11 +8921,6 @@ react-is@^16.12.0, react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1, react-i
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
-
-react-optimize@^2.4.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/react-optimize/-/react-optimize-2.4.0.tgz#fcea0af3927223334dde256e18927f911ca227c8"
-  integrity sha512-QK+z8wwOGKUVk6zC2q6l2H67V/bgMleCdm+xpefWQu9F5363LX0nh0ZGcewE8miUWF1xk5U1jWWKjhiVv8lb7g==
 
 react-responsive@^8.1.0:
   version "8.1.0"
