@@ -94,6 +94,7 @@ export const Unit = (props) => {
 
   console.log('variant', getVariant());
 
+  const showAvailability = getVariant() === 1;
 
   return (
     <StyledUnit initial={initial} animate={animation} transition={transition}>
@@ -103,7 +104,7 @@ export const Unit = (props) => {
         <div>
           <LinkButton href={`https://www.uhaul.com/Locations/Self-Storage-near-Rogers-TX-76569/1035094/`}>Rent Now at U-Haul.com</LinkButton>
         </div>
-        {getVariant() ? <>{VacantUnits && TotalUnits && <h3>{`${VacantUnits} of ${TotalUnits} available`}</h3>}</> : null}
+        {showAvailability ? <>{VacantUnits && TotalUnits && <h3>{`${VacantUnits} of ${TotalUnits} available`}</h3>}</> : null}
       </div>
       {/* <Table tableData={tableData} /> */}
     </StyledUnit>
