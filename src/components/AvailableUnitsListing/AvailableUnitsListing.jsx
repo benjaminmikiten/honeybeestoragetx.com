@@ -86,7 +86,7 @@ export const Unit = (props) => {
     type: "spring",
   };
 
-  const ABTest = useGoogleOptimize("cc_W-MvdRWKEAr1T0sFG9A", [0, 1]);
+  const ABTest = useGoogleOptimize("cc_W-MvdRWKEAr1T0sFG9A", [1, 0]);
 
   console.log('AB Test?', ABTest);
 
