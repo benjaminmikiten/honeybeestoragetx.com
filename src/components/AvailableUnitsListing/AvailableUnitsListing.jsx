@@ -94,7 +94,7 @@ export const Unit = (props) => {
 
   console.log('variant', getVariant());
 
-  const showAvailability = getVariant() === 1;
+  const showAvailability = getVariant() === "1";
   console.log('show Availability?', showAvailability);
 
   return (
