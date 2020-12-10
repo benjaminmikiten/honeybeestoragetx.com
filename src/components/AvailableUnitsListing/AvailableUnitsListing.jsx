@@ -6,7 +6,6 @@ import { LinkButton } from "../LinkButton";
 import { motion } from "framer-motion";
 import { transparentize } from "polished";
 
-import useGoogleOptimize from "@react-hook/google-optimize";
 
 const StyledUnits = styled.div`
   > div {
@@ -86,9 +85,15 @@ export const Unit = (props) => {
     type: "spring",
   };
 
-  const ABTest = useGoogleOptimize("cc_W-MvdRWKEAr1T0sFG9A", [1, 0]);
+  const getVariant = () => {
+    if(window.google_optimize){
+      return window.google_optimize.get('cc_W-MvdRWKEAr1T0sFG9A')
+    }
+    return null
+  }
 
-  console.log('AB Test?', ABTest);
+  console.log('variant', getVariant());
+
 
   return (
     <StyledUnit initial={initial} animate={animation} transition={transition}>
@@ -98,7 +103,7 @@ export const Unit = (props) => {
         <div>
           <LinkButton href={`https://www.uhaul.com/Locations/Self-Storage-near-Rogers-TX-76569/1035094/`}>Rent Now at U-Haul.com</LinkButton>
         </div>
-        {ABTest ? <>{VacantUnits && TotalUnits && <h3>{`${VacantUnits} of ${TotalUnits} available`}</h3>}</> : null}
+        {getVariant() ? <>{VacantUnits && TotalUnits && <h3>{`${VacantUnits} of ${TotalUnits} available`}</h3>}</> : null}
       </div>
       {/* <Table tableData={tableData} /> */}
     </StyledUnit>
