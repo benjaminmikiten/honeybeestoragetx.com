@@ -23,6 +23,9 @@ export const Footer = () => {
         <p>
           <sup>*</sup> No trucks or trailers available to rent at this location.
         </p>
+        <p>
+          <sup>**</sup> Minimum 6 month lease.
+        </p>
       </div>
     </StyledFooter>
   );
