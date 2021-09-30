@@ -6,19 +6,47 @@ import { LinkButton } from "../LinkButton";
 import { motion } from "framer-motion";
 import { transparentize } from "polished";
 
+const PriceArea  = styled.div`
+    grid-area: price;
+    h3 {
+      ${({ theme }) => theme.type.mediumHeader};
+      color: ${({ theme }) => theme.colors.tertiary};
+    }
+    @media ${({ theme }) => theme.device.tablet} {
+      text-align: right;
+    }
+`;
+const CTAArea = styled.div`
+  grid-area: cta;
+`;
+const TitleArea = styled.div`
+  h3 {
+    ${({ theme }) => theme.type.largeHeader};
+    color: ${({ theme }) => theme.colors.dark};
+  }
+  grid-area: title;
+  `;
+const DetailsArea = styled.div`
+    grid-area: details;
+
+    > h3 {
+      ${({ theme }) => theme.type.smallHeader};
+      color: ${({ theme }) => theme.colors.grey};
+    }
+
+    @media ${({ theme }) => theme.device.tablet} {
+      text-align: right;
+    }
+`;
 
 const StyledUnits = styled.div`
   > div {
     display: flex;
   }
 `;
-const StyledUnit = styled(motion.div)`
-  width: 100%;
-  background-color: ${({ theme }) => transparentize(0, theme.colors.white)};
-  padding: 16px;
 
-  > div {
-    display: grid;
+const StyledUnitLayout = styled.div`
+  display: grid;
     grid-column-gap: 16px;
     grid-row-gap: 16px;
     grid-template-areas:
@@ -35,38 +63,12 @@ const StyledUnit = styled(motion.div)`
     > * {
       align-self: center;
     }
-  }
+`;
 
-  h3 {
-    ${({ theme }) => theme.type.largeHeader};
-  }
-
-  h3:nth-of-type(1) {
-    ${({ theme }) => theme.type.largeHeader};
-    color: ${({ theme }) => theme.colors.dark};
-    grid-area: title;
-  }
-  h3:nth-of-type(2) {
-    ${({ theme }) => theme.type.mediumHeader};
-    grid-area: price;
-    color: ${({ theme }) => theme.colors.tertiary};
-    @media ${({ theme }) => theme.device.tablet} {
-      text-align: right;
-    }
-  }
-  > div > :nth-child(3) {
-    grid-area: cta;
-    color: ${({ theme }) => theme.colors.grey};
-  }
-  h3:nth-of-type(3) {
-    ${({ theme }) => theme.type.smallHeader};
-    grid-area: details;
-    color: ${({ theme }) => theme.colors.grey};
-
-    @media ${({ theme }) => theme.device.tablet} {
-      text-align: right;
-    }
-  }
+const StyledUnit = styled(motion.div)`
+  width: 100%;
+  background-color: ${({ theme }) => transparentize(0, theme.colors.white)};
+  padding: 16px;
 `;
 
 export const Unit = (props) => {
@@ -85,29 +87,26 @@ export const Unit = (props) => {
     type: "spring",
   };
 
-  const getVariant = () => {
-    if(window.google_optimize){
-      return window.google_optimize.get('cc_W-MvdRWKEAr1T0sFG9A')
-    }
-    return null
-  }
-
-  console.log('variant', getVariant());
-
-  const showAvailability = getVariant() === "1";
-  console.log('show Availability?', showAvailability);
+  const showAvailability = VacantUnits && TotalUnits;
 
   return (
     <StyledUnit initial={initial} animate={animation} transition={transition}>
-      <div>
-        <h3>{`${Length}′⨯${Width}′⨯${Height}′`}</h3>
-        <h3>{`$${Monthly}/mo`}</h3>
-        <div>
+      <StyledUnitLayout>
+        <TitleArea>
+          <h3>{`${Length}′⨯${Width}′⨯${Height}′`}</h3>
+        </TitleArea>
+        <PriceArea>
+          <h3>{`$${Monthly}/mo`}<sup>**</sup></h3>
+        </PriceArea>
+        <CTAArea>
           <LinkButton href={`https://www.uhaul.com/Locations/Self-Storage-near-Rogers-TX-76569/1035094/`}>Rent Now at U-Haul.com</LinkButton>
-        </div>
-        {showAvailability ? <>{VacantUnits && TotalUnits && <h3>{`${VacantUnits} of ${TotalUnits} available`}</h3>}</> : null}
-      </div>
-      {/* <Table tableData={tableData} /> */}
+        </CTAArea>
+        <DetailsArea>
+        {showAvailability ? (
+          <h3>{`${VacantUnits} of ${TotalUnits} available`}</h3>
+          ) : null}
+          </DetailsArea>
+      </StyledUnitLayout>
     </StyledUnit>
   );
 };
