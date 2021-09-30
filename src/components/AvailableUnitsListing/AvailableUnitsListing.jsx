@@ -103,7 +103,7 @@ export const Unit = (props) => {
         </CTAArea>
         <DetailsArea>
         {showAvailability ? (
-          <h3>{`${VacantUnits} of ${TotalUnits} available`}</h3>
+          <h3>{`${VacantUnits} available`}</h3>
           ) : null}
           </DetailsArea>
       </StyledUnitLayout>
