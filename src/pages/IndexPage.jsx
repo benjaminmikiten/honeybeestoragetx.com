@@ -17,8 +17,6 @@ export const IndexPage = () => {
     });
   };
 
-  // const ABTest = useGoogleOptimize("cc_W-MvdRWKEAr1T0sFG9A", [true, false]);
-
   return (
     <Page>
       <Hero background={background} handleClickScroll={handleClickScroll} />
