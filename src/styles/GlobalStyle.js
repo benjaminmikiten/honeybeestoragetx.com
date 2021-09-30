@@ -29,4 +29,9 @@ export const GlobalStyle = createGlobalStyle`
   *:before {
     box-sizing: border-box;
   }
+
+
+  sup {
+    font-size: .5em;
+  }
 `;
