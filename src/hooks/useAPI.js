@@ -2,8 +2,8 @@ import { useState, useEffect, useRef } from "react";
 
 export const useAPI = (url) => {
   const [data, setData] = useState(null);
-  const API_URL = "https://api.honeybeestoragetx.com";
-  const TIMEOUT_DURATION = 5 * 1000; //10s
+  const API_URL = "https://us-central1-hbs-uhaul-proxy.cloudfunctions.net/location";
+  const TIMEOUT_DURATION = 5 * 1000; //5s
   const requestTimeout = useRef(null);
 
   useEffect(() => {
@@ -13,7 +13,7 @@ export const useAPI = (url) => {
     }, TIMEOUT_DURATION);
 
     const fetchData = async () => {
-      fetch(`${API_URL}${url}`)
+      fetch(`${API_URL}`)
         .then((response) => {
           clearTimeout(requestTimeout.current);
           return response.json();
