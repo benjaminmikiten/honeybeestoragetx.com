@@ -72,7 +72,7 @@ const StyledUnit = styled(motion.div)`
 `;
 
 export const Unit = (props) => {
-  const { Height = 14, Monthly = 75, Width = 28, Length = 14, VacantUnits = null, TotalUnits = null } = props;
+  const { Height = 14, Monthly = 100, Width = 28, Length = 14, VacantUnits = null, TotalUnits = null } = props;
 
   const initial = {
     opacity: 0,
