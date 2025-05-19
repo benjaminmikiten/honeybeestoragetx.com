@@ -168,7 +168,7 @@ export const Body = ({ children, handleClickScroll }) => {
     <StyledBody>
       <div>
         <StyledPane animate={paneAnimation} initial={initialAnimation} transition={{ ...transition, delay: 0 }}>
-          <h2>Covered boat and RV storage in Central&nbsp;Texas</h2>
+          <h2>Covered and uncovered boat and RV storage in Central&nbsp;Texas</h2>
           <p>
             Powered by U-Haul<sup>*</sup>
           </p>
