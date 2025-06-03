@@ -27,7 +27,10 @@ export const Footer = () => {
           <sup>**</sup> Minimum 6 month lease.
         </p>
         <p>
-          By providing your contact information, you consent to receive recurring messages from our business. Message frequency may vary. You may reply STOP to opt out at any time or HELP for additional information. Standard message and data rates may apply. We do not share your personal information with third parties for marketing purposes.
+          By providing your contact information, you consent to receive recurring messages from our business. Message frequency may vary. You may reply STOP to opt out at any time or HELP for additional information. Standard message and data rates may apply."
+        </p>
+        <p>
+          No mobile information will be shared with third parties/affiliates for marketing/promotional purposes. All the above categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties.
         </p>
       </div>
     </StyledFooter>
