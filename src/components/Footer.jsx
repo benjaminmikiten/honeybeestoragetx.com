@@ -26,6 +26,9 @@ export const Footer = () => {
         <p>
           <sup>**</sup> Minimum 6 month lease.
         </p>
+                <sup>***</sup><p>
+          Only fully operational/roadworthy vehicles are to be stored. i.e. no non-running or "project"  vehicles.
+        </p>
         <p>
           By providing your contact information, you consent to receive recurring messages from our business. Message frequency may vary. You may reply STOP to opt out at any time or HELP for additional information. Standard message and data rates may apply."
         </p>
