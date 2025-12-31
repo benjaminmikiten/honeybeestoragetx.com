@@ -26,7 +26,6 @@ export function useAPI(_url: string): UseAPIResult {
           return response.json();
         })
         .then((result: LocationAPIResponse) => {
-          console.log("API", result);
           setData(result);
         })
         .catch((err) => {
