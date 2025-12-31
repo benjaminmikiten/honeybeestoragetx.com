@@ -2,13 +2,14 @@ import { useState, useEffect, useRef } from "react";
 import { API_URL } from "../config";
 import type { LocationAPIResponse } from "../types";
 
+const TIMEOUT_DURATION = 5 * 1000; // 5s
+
 interface UseAPIResult {
   data: LocationAPIResponse | null;
 }
 
 export function useAPI(_url: string): UseAPIResult {
   const [data, setData] = useState<LocationAPIResponse | null>(null);
-  const TIMEOUT_DURATION = 5 * 1000; // 5s
   const requestTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {

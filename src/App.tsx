@@ -1,9 +1,8 @@
 import { createContext } from "react";
 import { Routes } from "./Routes";
 
-interface AppContextType {
-  // Add context properties as needed
-}
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
+interface AppContextType {}
 
 export const AppContext = createContext<AppContextType>({});
 

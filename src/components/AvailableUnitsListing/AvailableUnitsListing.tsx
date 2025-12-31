@@ -93,7 +93,9 @@ function UnitCard({ unit }: UnitCardProps) {
         {/* Bonus Comments Area */}
         {hasBonusComments && (
           <div className="[grid-area:bonusComments] text-left self-start">
-            <p className="text-dark text-base md:text-lg m-0">{BonusComments}</p>
+            <p className="text-dark text-base md:text-lg m-0">
+              {BonusComments}
+            </p>
           </div>
         )}
       </div>
@@ -128,7 +130,9 @@ export const AvailableUnitsListing = forwardRef<HTMLDivElement>(
       <div ref={ref} className="w-full">
         <div className="border-t border-white flex flex-col justify-center py-9 lg:justify-start [&_h2]:text-white [&_h2]:text-2xl [&_h2]:md:text-[2.5rem] [&_h2]:leading-tight [&_h2]:font-bold [&_h2]:mb-2">
           {isError ? (
-            <p className="text-white">Unable to load units. Please try again later.</p>
+            <p className="text-white">
+              Unable to load units. Please try again later.
+            </p>
           ) : hasUnits ? (
             <>
               <h2>Available Units</h2>
