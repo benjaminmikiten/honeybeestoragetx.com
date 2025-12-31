@@ -3,30 +3,24 @@ import { motion } from "framer-motion";
 import { useAPI } from "../../hooks/useAPI";
 import { Loader } from "../Loader";
 import { LinkButton } from "../LinkButton";
+import type { Unit } from "../../types";
 
-interface UnitData {
-  Height?: number;
-  Monthly?: number;
-  Width?: number;
-  Length?: number;
-  VacantUnits?: number;
-  TotalUnits?: number;
-  SizeDescriptionsField?: string[];
-  BonusComments?: string;
+interface UnitCardProps {
+  unit: Unit;
 }
 
-interface UnitProps extends UnitData {}
+function UnitCard({ unit }: UnitCardProps) {
+  const {
+    Height,
+    Monthly,
+    Width,
+    Length,
+    VacantUnits,
+    TotalUnits,
+    SizeDescriptionsField,
+    BonusComments,
+  } = unit;
 
-function Unit({
-  Height,
-  Monthly,
-  Width,
-  Length,
-  VacantUnits,
-  TotalUnits,
-  SizeDescriptionsField,
-  BonusComments,
-}: UnitProps) {
   if (!Height || !Monthly || !Width || !Length) {
     return null;
   }
@@ -107,41 +101,38 @@ function Unit({
   );
 }
 
-interface UnitsProps {
-  units?: UnitData[];
+interface UnitsListProps {
+  units: Unit[];
 }
 
-function Units({ units = [] }: UnitsProps) {
+function UnitsList({ units }: UnitsListProps) {
   return (
     <div>
       <div className="flex flex-col">
-        {units.map((u, i) => (
-          <Unit {...u} key={i} />
+        {units.map((unit, i) => (
+          <UnitCard unit={unit} key={unit.UnitId || i} />
         ))}
       </div>
     </div>
   );
 }
 
-interface LocationData {
-  Location?: {
-    Units?: UnitData[];
-  };
-  error?: boolean;
-  message?: string;
-}
-
 export const AvailableUnitsListing = forwardRef<HTMLDivElement>(
   function AvailableUnitsListing(_props, ref) {
-    const { data } = useAPI<LocationData>("/location");
+    const { data } = useAPI("/location");
+
+    const isError = data && "error" in data;
+    const hasUnits = data && "Location" in data && data.Location?.Units;
 
     return (
       <div ref={ref} className="w-full">
         <div className="border-t border-white flex flex-col justify-center py-9 lg:justify-start [&_h2]:text-white [&_h2]:text-2xl [&_h2]:md:text-[2.5rem] [&_h2]:leading-tight [&_h2]:font-bold [&_h2]:mb-2">
-          {data ? (
+          {isError ? (
+            <p className="text-white">Unable to load units. Please try again later.</p>
+          ) : hasUnits ? (
             <>
               <h2>Available Units</h2>
-              <Units units={data.Location?.Units} />
+              <UnitsList units={data.Location.Units} />
             </>
           ) : (
             <Loader />
