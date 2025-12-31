@@ -39,9 +39,34 @@ const DetailsArea = styled.div`
     }
 `;
 
+const SizeDescriptionsArea = styled.div`
+  grid-area: sizeDescriptions;
+  text-align: left;
+  align-self: start;
+
+  > p {
+    ${({ theme }) => theme.type.body};
+    color: ${({ theme }) => theme.colors.dark};
+    margin: 0;
+  }
+`;
+
+const BonusCommentsArea = styled.div`
+  grid-area: bonusComments;
+  text-align: left;
+  align-self: start;
+
+  > p {
+    ${({ theme }) => theme.type.body};
+    color: ${({ theme }) => theme.colors.dark};
+    margin: 0;
+  }
+`;
+
 const StyledUnits = styled.div`
   > div {
     display: flex;
+    flex-direction: column;
   }
 `;
 
@@ -53,12 +78,16 @@ const StyledUnitLayout = styled.div`
       "title"
       "price"
       "cta"
-      "details";
+      "details"
+      "sizeDescriptions"
+      "bonusComments";
 
     @media ${({ theme }) => theme.device.tablet} {
       grid-template-areas:
         "title price"
-        "cta details";
+        "cta details"
+        "sizeDescriptions sizeDescriptions"
+        "bonusComments bonusComments";
     }
     > * {
       align-self: center;
@@ -72,7 +101,16 @@ const StyledUnit = styled(motion.div)`
 `;
 
 export const Unit = (props) => {
-  const { Height = 14, Monthly = 100, Width = 28, Length = 14, VacantUnits = null, TotalUnits = null } = props;
+  const { 
+    Height = 14, 
+    Monthly = 100, 
+    Width = 28, 
+    Length = 14, 
+    VacantUnits = null, 
+    TotalUnits = null,
+    SizeDescriptionsField = [],
+    BonusComments = null
+  } = props;
 
   const initial = {
     opacity: 0,
@@ -88,6 +126,8 @@ export const Unit = (props) => {
   };
 
   const showAvailability = VacantUnits && TotalUnits;
+  const hasSizeDescriptions = SizeDescriptionsField && SizeDescriptionsField.length > 0;
+  const hasBonusComments = BonusComments && BonusComments.trim().length > 0;
 
   return (
     <StyledUnit initial={initial} animate={animation} transition={transition}>
@@ -106,6 +146,18 @@ export const Unit = (props) => {
           <h3>{`${VacantUnits} available`}</h3>
           ) : null}
           </DetailsArea>
+        {hasSizeDescriptions && (
+          <SizeDescriptionsArea>
+            {SizeDescriptionsField.map((desc, index) => (
+              <p key={index}>{desc}</p>
+            ))}
+          </SizeDescriptionsArea>
+        )}
+        {hasBonusComments && (
+          <BonusCommentsArea>
+            <p>{BonusComments}</p>
+          </BonusCommentsArea>
+        )}
       </StyledUnitLayout>
     </StyledUnit>
   );
