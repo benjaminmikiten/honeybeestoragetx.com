@@ -1,0 +1,436 @@
+{
+    "Location": {
+        "Address": {
+            "AddressLine1": "13417 Shaw Road",
+            "AddressLine2": "",
+            "City": "Rogers",
+            "Country": "",
+            "County": null,
+            "DestinationLatitude": 0,
+            "DestinationLongitude": 0,
+            "DestinationState": null,
+            "FormattedAddress": null,
+            "Location": {
+                "Latitude": 30.9449192607238,
+                "Longitude": -97.2391464085563
+            },
+            "OriginLatitude": 0,
+            "OriginLongitude": 0,
+            "PostalCode": "76569",
+            "State": null
+        },
+        "AllowsReservations": true,
+        "Coupons": [
+            {
+                "Description": "50% for 6 months",
+                "Instructions": ""
+            },
+            {
+                "Description": "12th month free when paying 11 in full",
+                "Instructions": "12th month free when paying 11 in full"
+            }
+        ],
+        "FacilityFeatures": [
+            {
+                "Description": "",
+                "ImageUrl": "http://www.webselfstorage.com/Image/f8c41497-7026-4982-8964-8ee307e775c4"
+            },
+            {
+                "Description": "",
+                "ImageUrl": "http://www.webselfstorage.com/Image/08122fc3-5ae1-4f9c-a944-5fce7393e490"
+            }
+        ],
+        "HoursOfOperation": {
+            "Gate": {
+                "Friday": {
+                    "Close": "",
+                    "IsOpen": false,
+                    "Open": ""
+                },
+                "Monday": {
+                    "Close": "",
+                    "IsOpen": false,
+                    "Open": ""
+                },
+                "Saturday": {
+                    "Close": "",
+                    "IsOpen": false,
+                    "Open": ""
+                },
+                "Sunday": {
+                    "Close": "",
+                    "IsOpen": false,
+                    "Open": ""
+                },
+                "Thursday": {
+                    "Close": "",
+                    "IsOpen": false,
+                    "Open": ""
+                },
+                "Tuesday": {
+                    "Close": "",
+                    "IsOpen": false,
+                    "Open": ""
+                },
+                "Wednesday": {
+                    "Close": "",
+                    "IsOpen": false,
+                    "Open": ""
+                }
+            },
+            "Office": {
+                "Friday": {
+                    "Close": "",
+                    "IsOpen": false,
+                    "Open": ""
+                },
+                "Monday": {
+                    "Close": "",
+                    "IsOpen": false,
+                    "Open": ""
+                },
+                "Saturday": {
+                    "Close": "",
+                    "IsOpen": false,
+                    "Open": ""
+                },
+                "Sunday": {
+                    "Close": "",
+                    "IsOpen": false,
+                    "Open": ""
+                },
+                "Thursday": {
+                    "Close": "",
+                    "IsOpen": false,
+                    "Open": ""
+                },
+                "Tuesday": {
+                    "Close": "",
+                    "IsOpen": false,
+                    "Open": ""
+                },
+                "Wednesday": {
+                    "Close": "",
+                    "IsOpen": false,
+                    "Open": ""
+                }
+            }
+        },
+        "LocationFeatures": [
+            {
+                "Description": "No trucks/trailers/supplies available at this location"
+            },
+            {
+                "Description": "Unmanned/Remote Facility. Office Open by Appointment Only"
+            },
+            {
+                "Description": "Electronic Gate Access"
+            },
+            {
+                "Description": "Video Surveillance"
+            },
+            {
+                "Description": "Online payments"
+            }
+        ],
+        "LocationServices": [
+            {
+                "Amount": 1,
+                "Description": "No trucks/trailers/supplies available at this location",
+                "LocationServiceNumber": "bdf95347-0a00-404e-b000-193b0ecceb8c",
+                "Taxable": "False"
+            },
+            {
+                "Amount": 1,
+                "Description": "Unmanned/Remote Facility. Office Open by Appointment Only",
+                "LocationServiceNumber": "9b5b4f55-62fd-4ed9-8cb5-43dc6c348f26",
+                "Taxable": "False"
+            },
+            {
+                "Amount": 1,
+                "Description": "Electronic Gate Access",
+                "LocationServiceNumber": "f518f302-eaf8-4754-88a1-0572ac58c10e",
+                "Taxable": "False"
+            },
+            {
+                "Amount": 1,
+                "Description": "Video Surveillance",
+                "LocationServiceNumber": "8e7b89f3-eeff-419b-81d1-b62ed995e431",
+                "Taxable": "False"
+            },
+            {
+                "Amount": 1,
+                "Description": "Online payments",
+                "LocationServiceNumber": "6b2d1146-701e-4703-af35-8b4943cdd1f0",
+                "Taxable": "False"
+            }
+        ],
+        "Name": "Honey Bee Storage",
+        "Phone": "2547602565",
+        "ReservationDates": [
+            "12/30/2025",
+            "12/31/2025",
+            "1/1/2026",
+            "1/2/2026",
+            "1/3/2026",
+            "1/4/2026",
+            "1/5/2026",
+            "1/6/2026",
+            "1/7/2026",
+            "1/8/2026",
+            "1/9/2026",
+            "1/10/2026",
+            "1/11/2026",
+            "1/12/2026",
+            "1/13/2026",
+            "1/14/2026",
+            "1/15/2026",
+            "1/16/2026",
+            "1/17/2026",
+            "1/18/2026",
+            "1/19/2026",
+            "1/20/2026",
+            "1/21/2026",
+            "1/22/2026",
+            "1/23/2026",
+            "1/24/2026",
+            "1/25/2026",
+            "1/26/2026",
+            "1/27/2026",
+            "1/28/2026",
+            "1/29/2026"
+        ],
+        "ReservationNotBelowPercentage": "0",
+        "ReservationNotBelowTotalUnits": "0",
+        "ReviewFee": 0,
+        "Units": [
+            {
+                "SizeDescriptionsField": [
+                    "Drive Up  Outside Level No Climate Drivethrough"
+                ],
+                "BonusComments": "self-parking, please park in an open space against the fence, like in a parking lot",
+                "CubicFootage": 18600,
+                "OrderGrouping": "000001Drive Up",
+                "SquareFootage": 465,
+                "TotalUnits": 80,
+                "UnitFeature": null,
+                "UnitStorageGuide": null,
+                "UnitTypeImage": null,
+                "Height": 40,
+                "InsuranceOptions": [
+                    {
+                        "Description": "Insurance $15,000",
+                        "Due": 0,
+                        "InsuranceId": "1332f571-c70f-4f5b-aba5-24e472cf00d2",
+                        "MonthlyRate": 35.95,
+                        "Percentage": 0,
+                        "Quantity": 0,
+                        "Selected": false,
+                        "Tax": 0,
+                        "Total": 0
+                    },
+                    {
+                        "Description": "Insurance $10,000",
+                        "Due": 0,
+                        "InsuranceId": "e41b1585-abed-4289-b71c-85a16213d409",
+                        "MonthlyRate": 20.95,
+                        "Percentage": 0,
+                        "Quantity": 0,
+                        "Selected": false,
+                        "Tax": 0,
+                        "Total": 0
+                    },
+                    {
+                        "Description": "Insurance $1,000",
+                        "Due": 0,
+                        "InsuranceId": "7355e678-e5fd-4aaf-9a5b-ed2de02b9643",
+                        "MonthlyRate": 7.95,
+                        "Percentage": 0,
+                        "Quantity": 0,
+                        "Selected": false,
+                        "Tax": 0,
+                        "Total": 0
+                    },
+                    {
+                        "Description": "Insurance $5,000",
+                        "Due": 0,
+                        "InsuranceId": "434fce13-b304-41e8-9997-f499fa9ed981",
+                        "MonthlyRate": 10.95,
+                        "Percentage": 0,
+                        "Quantity": 0,
+                        "Selected": false,
+                        "Tax": 0,
+                        "Total": 0
+                    }
+                ],
+                "IsCampusStorage": false,
+                "Length": 31,
+                "Monthly": 50,
+                "Portable": {
+                    "IsPortable": false,
+                    "OnSiteOnly": false,
+                    "WaiveDeliveryFee": false
+                },
+                "ServiceCharges": null,
+                "UnitId": "fe7d4509-92fc-4de0-8361-cce29942b39c",
+                "RentableObjectId": "c51539d3-e2c3-4dff-badb-0fd9d259a3fe",
+                "UnitSize": "15x31x40",
+                "VacantUnits": 80,
+                "Width": 15,
+                "RoomSizeReservationRules": null
+            },
+            {
+                "SizeDescriptionsField": [
+                    "RV/Boat/Vehicle/Parking 1st Floor Covered Level No Climate Electricity"
+                ],
+                "BonusComments": "all 34 covered units are 14' x 28', gravel (no pavement)",
+                "CubicFootage": 5488,
+                "OrderGrouping": "000002RV/Boat/Vehicle/Parking",
+                "SquareFootage": 392,
+                "TotalUnits": 28,
+                "UnitFeature": null,
+                "UnitStorageGuide": null,
+                "UnitTypeImage": null,
+                "Height": 14,
+                "InsuranceOptions": [
+                    {
+                        "Description": "Insurance $15,000",
+                        "Due": 0,
+                        "InsuranceId": "1332f571-c70f-4f5b-aba5-24e472cf00d2",
+                        "MonthlyRate": 35.95,
+                        "Percentage": 0,
+                        "Quantity": 0,
+                        "Selected": false,
+                        "Tax": 0,
+                        "Total": 0
+                    },
+                    {
+                        "Description": "Insurance $10,000",
+                        "Due": 0,
+                        "InsuranceId": "e41b1585-abed-4289-b71c-85a16213d409",
+                        "MonthlyRate": 20.95,
+                        "Percentage": 0,
+                        "Quantity": 0,
+                        "Selected": false,
+                        "Tax": 0,
+                        "Total": 0
+                    },
+                    {
+                        "Description": "Insurance $1,000",
+                        "Due": 0,
+                        "InsuranceId": "7355e678-e5fd-4aaf-9a5b-ed2de02b9643",
+                        "MonthlyRate": 7.95,
+                        "Percentage": 0,
+                        "Quantity": 0,
+                        "Selected": false,
+                        "Tax": 0,
+                        "Total": 0
+                    },
+                    {
+                        "Description": "Insurance $5,000",
+                        "Due": 0,
+                        "InsuranceId": "434fce13-b304-41e8-9997-f499fa9ed981",
+                        "MonthlyRate": 10.95,
+                        "Percentage": 0,
+                        "Quantity": 0,
+                        "Selected": false,
+                        "Tax": 0,
+                        "Total": 0
+                    }
+                ],
+                "IsCampusStorage": false,
+                "Length": 28,
+                "Monthly": 100,
+                "Portable": {
+                    "IsPortable": false,
+                    "OnSiteOnly": true,
+                    "WaiveDeliveryFee": false
+                },
+                "ServiceCharges": null,
+                "UnitId": "57d425fe-c3cb-4529-9f86-223afc95c988",
+                "RentableObjectId": "f35bde05-61d7-43f2-a94b-58cd8adb9598",
+                "UnitSize": "14x28x14",
+                "VacantUnits": 2,
+                "Width": 14,
+                "RoomSizeReservationRules": null
+            },
+            {
+                "SizeDescriptionsField": [
+                    "RV/Boat/Vehicle/Parking No Climate Drivethrough No Electricity"
+                ],
+                "BonusComments": "self parking",
+                "CubicFootage": 21000,
+                "OrderGrouping": "000003RV/Boat/Vehicle/Parking",
+                "SquareFootage": 1050,
+                "TotalUnits": 41,
+                "UnitFeature": null,
+                "UnitStorageGuide": null,
+                "UnitTypeImage": null,
+                "Height": 20,
+                "InsuranceOptions": [
+                    {
+                        "Description": "Insurance $15,000",
+                        "Due": 0,
+                        "InsuranceId": "1332f571-c70f-4f5b-aba5-24e472cf00d2",
+                        "MonthlyRate": 35.95,
+                        "Percentage": 0,
+                        "Quantity": 0,
+                        "Selected": false,
+                        "Tax": 0,
+                        "Total": 0
+                    },
+                    {
+                        "Description": "Insurance $10,000",
+                        "Due": 0,
+                        "InsuranceId": "e41b1585-abed-4289-b71c-85a16213d409",
+                        "MonthlyRate": 20.95,
+                        "Percentage": 0,
+                        "Quantity": 0,
+                        "Selected": false,
+                        "Tax": 0,
+                        "Total": 0
+                    },
+                    {
+                        "Description": "Insurance $1,000",
+                        "Due": 0,
+                        "InsuranceId": "7355e678-e5fd-4aaf-9a5b-ed2de02b9643",
+                        "MonthlyRate": 7.95,
+                        "Percentage": 0,
+                        "Quantity": 0,
+                        "Selected": false,
+                        "Tax": 0,
+                        "Total": 0
+                    },
+                    {
+                        "Description": "Insurance $5,000",
+                        "Due": 0,
+                        "InsuranceId": "434fce13-b304-41e8-9997-f499fa9ed981",
+                        "MonthlyRate": 10.95,
+                        "Percentage": 0,
+                        "Quantity": 0,
+                        "Selected": false,
+                        "Tax": 0,
+                        "Total": 0
+                    }
+                ],
+                "IsCampusStorage": false,
+                "Length": 75,
+                "Monthly": 50,
+                "Portable": {
+                    "IsPortable": false,
+                    "OnSiteOnly": false,
+                    "WaiveDeliveryFee": false
+                },
+                "ServiceCharges": null,
+                "UnitId": "1d42e593-e55d-47ff-9fa2-357254477fb3",
+                "RentableObjectId": "9965f815-688d-402a-b92a-de47b09f4e00",
+                "UnitSize": "14x75x20",
+                "VacantUnits": 39,
+                "Width": 14,
+                "RoomSizeReservationRules": null
+            }
+        ]
+    },
+    "Success": true,
+    "ErrorMessage": ""
+}
