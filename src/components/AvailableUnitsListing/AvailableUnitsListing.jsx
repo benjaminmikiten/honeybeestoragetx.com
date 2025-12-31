@@ -102,15 +102,20 @@ const StyledUnit = styled(motion.div)`
 
 export const Unit = (props) => {
   const { 
-    Height = 14, 
-    Monthly = 100, 
-    Width = 28, 
-    Length = 14, 
-    VacantUnits = null, 
-    TotalUnits = null,
-    SizeDescriptionsField = [],
-    BonusComments = null
+    Height, 
+    Monthly, 
+    Width, 
+    Length, 
+    VacantUnits, 
+    TotalUnits,
+    SizeDescriptionsField,
+    BonusComments
   } = props;
+
+  // Don't render if required props are missing
+  if (!Height || !Monthly || !Width || !Length) {
+    return null;
+  }
 
   const initial = {
     opacity: 0,
