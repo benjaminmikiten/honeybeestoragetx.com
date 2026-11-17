@@ -1,0 +1,11 @@
+{
+  "name": "hbs-uhaul-proxy",
+  "private": true,
+  "main": "proxy.js",
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "cors": "^2.8.5"
+  }
+}

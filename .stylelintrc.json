@@ -7,6 +7,12 @@
         "ignoreAtRules": ["tailwind", "apply", "layer", "config"]
       }
     ],
-    "no-descending-specificity": null
+    "no-descending-specificity": null,
+    "at-rule-prelude-no-invalid": [
+      true,
+      {
+        "ignoreAtRules": ["apply"]
+      }
+    ]
   }
 }
