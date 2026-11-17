@@ -3,12 +3,7 @@ import { IndexPage } from "./pages/IndexPage";
 
 export function Routes() {
   return (
-    <BrowserRouter
-      future={{
-        v7_startTransition: true,
-        v7_relativeSplatPath: true,
-      }}
-    >
+    <BrowserRouter>
       <RouterRoutes>
         <Route path="/" element={<IndexPage />} />
       </RouterRoutes>
